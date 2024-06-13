@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+
+
+     
+
+
+        * {
+            font-family: poppins;
+
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: black;
+            color: rgb(255, 255, 255);
+
+        }
+
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: black;
+            position: fixed;
+            top: 0;
+            z-index: 100;
+            /* min-width: 250px; */
+            width: 100vw;
+
+
+            height: 60px;
+            box-shadow: 0px 0px 1px white;
+
+        }
+
+        nav ul {
+
+            display: flex;
+            justify-content: center;
+
+
+
+        }
+
+
+        nav ul li {
+            list-style: none;
+            margin: 0 24px;
+
+
+
+
+
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            transition: 0.3s color;
+        }
+
+        nav ul li a:hover {
+            color: aqua;
+            cursor: pointer;
+        }
+
+        nav ul li a:active {
+            color: rgb(5, 86, 86);
+
+        }
+
+        .left {
+            font-size: 1.3rem;
+            font-weight: 600;
+           
+        }
+
+        .firstsection {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 35px 0;
+            margin-bottom: 0;
+
+
+
+        }
+
+        .firstsection div {
+            width: 30%;
+
+        }
+
+        .leftsection {
+
+
+            font-size: 2.8rem;
+        }
+
+        .rightsection img {
+
+            width: 670px;
+            margin-bottom: 0;
+
+
+
+
+        }
+        
+
+
+
+
+        .secondsection {
+     
+            max-width: 80vw;
+           margin: auto;
+            height: 47vh;
+        }
+
+        .secondsection h1 {
+            font-family: poppins;
+            font-size: 600;
+
+
+        }
+
+        .secondsection .box {
+            /* this is important for those straight lines*/
+
+            background: rgb(255, 255, 255);
+            width: 80vw;
+            height: 0.2px;
+            margin: 35px 0;
+            display: flex;
+
+        }
+
+
+        main hr {
+
+            height: 0.2px;
+
+            margin: 0px 4% 18px 4%;
+
+        }
+
+        .text-gray {
+            color: grey;
+            padding: 20px 0;
+            
+        }
+
+        .secondsection .vertical {
+
+            margin: 0 150px 0 250px;
+
+            height: 95px;
+            width: 1px;
+            background-color: white;
+
+
+        }
+
+        .secondsection .verticaltext {
+            width: 180px;
+            text-align: center;
+            margin-left: 20px;
+            position: relative;
+            top: 70px;
+            right: 110px;
+
+
+        }
+
+        .secondsection .verticaldesc {
+            width: 180px;
+            color: grey;
+            font-size: 12px;
+            text-align: center;
+            margin-top: 3px;
+            margin-left: 20px;
+            position: relative;
+            top: 70px;
+            right: 110px;
+
+
+        }
+
+        .imagetop {
+            width: 25px;
+            position: relative;
+            top: -29px;
+            left: -13px;
+        }
+
+
+        /* this is 3rd */
+
+        .thirdsection {
+
+            max-width: 80vw;
+            margin: auto;
+            height: 38vh;
+        }
+
+        .thirdsection h1 {
+            font-family: poppins;
+            font-size: 600;
+
+        }
+
+        .thirdsection .box {
+            /* this is important for those straight lines*/
+            background: rgb(255, 255, 255);
+            width: 80vw;
+            height: 0.2px;
+            margin: 35px 0;
+            display: flex;
+
+        }
+
+        .thirdsection .verticalline {
+
+
+
+            margin: 0 300px 0 350px;
+            height: 95px;
+            width: 1px;
+            background-color: white;
+
+
+        }
+
+        .thirdsection .verticalline .linetitle {
+            width: 180px;
+            text-align: center;
+            margin-left: 20px;
+            position: relative;
+            top: 99px;
+            right: 103px;
+
+        }
+
+        .thirdsection .verticalline .lists {
+            width: 180px;
+            color: grey;
+            font-size: 12px;
+
+            margin-top: 3px;
+            margin-left: 20px;
+            position: relative;
+            top: 95px;
+            right: 44px;
+        }
+
+        .fourthsection {
+
+            max-width: 80vw;
+            margin: auto;
+            height: 48vh;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        #name {
+            width: 350px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            height: 30px;
+            border: none;
+        }
+
+        #email {
+            margin-top: 8px;
+            margin-bottom: 8px;
+            width: 350px;
+            height: 30px;
+            border: none;
+        }
+
+        #message {
+            width: 350px;
+            height: 60px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            border: none;
+        }
+
+        button {
+            width: 350px;
+            height: 30px;
+           
+            background-color: aqua;
+            transition: 0.3s color;
+            border: none;
+
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: rgba(0, 255, 255, 0.402);
+        }
+
+        button:active {
+            background-color: azure;
+        }
+        /* respective position ma rakheko */
+        
+.secondsection, .thirdsection, .fourthsection  {
+    padding-top: 20px; 
+}
+
+
+.secondsection:target, .thirdsection:target, .firstsection:target {
+    padding-top: 100px; 
+   
+}
+.firstsection{
+    padding-top: 35px;
+}
+
+
+
+
+
+        footer {
+            margin-top: 20px;
+
+            height: 150px;
+            background-color: rgba(23, 21, 21, 0.185);
+
+
+        }
+
+        footer .socials a {
+
+            color: white;
+            text-decoration: none;
+            font-size: 1.6rem;
+            transition: color 0.3s;
+        }
+
+        footer .socials a:hover {
+            color: aqua;
+        }
+
+        .socials ul {
+
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+
+        .copyright {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .donot {
+            margin-top: 10px;
+            text-align: center;
+        }
+        form, :placeholder-shown{
+            padding-left: 4px;
+            box-sizing: border-box;
+        }
+        form:active{
+            border: none;
+        }

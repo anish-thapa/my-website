@@ -75,8 +75,10 @@
         }
 
         .left a {
+               color: white;
             font-size: 1.3rem;
             font-weight: 600;
+             text-decoration: none;
            
         }
 

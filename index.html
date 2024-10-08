@@ -10,7 +10,6 @@
 </head>
 
 <body>
-    <!-- Navigation -->
     <nav>
         <div class="logo">
             <a href="#">Anish's Portfolio</a>
@@ -43,9 +42,7 @@
         </ul>
     </nav>
 
-    <!-- Main Content -->
     <main>
-        <!-- About Me Section -->
         <section id="aboutme" class="firstsection">
             <div class="leftsection">
                 Hi, I'm <span class="anish">Anish,</span>
@@ -59,9 +56,8 @@
             </div>
         </section>
 
-        <hr>
+        <hr id="edu">
 
-        <!-- Education Section -->
         <section id="education" class="secondsection">
             <span class="text-gray">What and Where I Studied</span>
             <h1>Education</h1>
@@ -70,7 +66,6 @@
                     <div class="verticaltext">
                         Peace Zone School <br>
                         Itahari <br>
-                        
                     </div>
                     <div class="verticaldesc">
                         Studied at Peace Zone School until SEE.
@@ -80,7 +75,6 @@
                     <div class="verticaltext">
                         Greenland College <br>
                         Biratnagar <br>
-                        
                     </div>
                     <div class="verticaldesc">
                         Studied +2 with a major in Business and Accounting.
@@ -90,7 +84,6 @@
                     <div class="verticaltext">
                         ISMT College <br>
                         Biratnagar <br>
-                      
                     </div>
                     <div class="verticaldesc">
                         Currently studying for a Bachelor's in Computer System Engineering.
@@ -99,9 +92,8 @@
             </div>
         </section>
 
-        <hr>
+        <hr id="skill">
 
-        <!-- Skills Section -->
         <section id="skills" class="thirdsection">
             <span class="text-gray">What is My Specialty</span>
             <h1>Skills</h1>
@@ -131,10 +123,9 @@
             </div>
         </section>
 
-        <hr>
+        <hr id="contact">
 
-        <!-- Contact Section -->
-         <section id="contactme" class="fourthsection">
+        <section id="contactme" class="fourthsection">
             <span class="text-gray">Get in Touch With Me</span>
             <h1 class="get-connected">Leave Your Contact Info Here</h1>
             <form id="contactForm" action="https://formspree.io/f/mdoqqnvo" method="POST">
@@ -154,7 +145,6 @@
 
     <hr>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="socials">
             <ul>
@@ -168,10 +158,8 @@
         <p class="copyright">
             &copy; 2024 Anish Thapa - All rights reserved.
         </p>
-       
     </footer>
 
-    <!-- Typed.js Animation -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
         var typed = new Typed('#element', {
@@ -180,7 +168,6 @@
         });
     </script>
 
-    <!-- Sidebar Toggle Script -->
     <script>
         function showSidebar() {
             const sidebar = document.querySelector('.sidebar');
@@ -196,42 +183,47 @@
             const menuButton = document.querySelector('.menuButton');
             const sidebar = document.querySelector('.sidebar');
 
-            menuButton.addEventListener('click', function () {
+            menuButton.addEventListener('click', function (event) {
+                event.preventDefault();
                 sidebar.classList.toggle('show');
             });
-        });
-    </script>
-    <script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission
-    
-        const formData = new FormData(this);
-        const formObject = {};
-        formData.forEach((value, key) => { formObject[key] = value; });
-        
-        fetch('https://formspree.io/f/mdoqqnvo', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formObject),
-        })
-        .then(response => {
-            if (response.ok) {
-                alert('Your message has been sent successfully!');
-                document.getElementById('contactForm').reset(); // Optional: Reset form fields
-            } else {
-                return response.json().then(data => {
-                    alert('There was an error sending your message: ' + (data.error || 'Unknown error'));
-                });
-            }
-        })
-        .catch(error => {
-            alert('There was an error sending your message. Please try again. Error: ' + error.message);
-        });
-    });
-    </script>
-</body>
 
+            const sidebarLinks = document.querySelectorAll('.sidebar a');
+            const navLinks = document.querySelectorAll('nav a');
+            const headerOffset = 80;
+
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: elementPosition,
+                        behavior: 'smooth'
+                    });
+
+                    hideSidebar();
+                    setActiveLink(link);
+                });
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    setActiveLink(this);
+                });
+            });
+        });
+
+        function setActiveLink(activeLink) {
+            const allLinks = document.querySelectorAll('nav a, .sidebar a');
+            allLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            activeLink.classList.add('active');
+        }
+    </script>
+
+</body>
 </html>
